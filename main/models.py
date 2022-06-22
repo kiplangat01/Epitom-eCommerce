@@ -1,8 +1,15 @@
 from distutils.command.upload import upload
 from email.mime import image
-from turtle import title
+from tkinter import CASCADE
+from turtle import color, title
 from unicodedata import category
 from django.db import models
+
+# Banner
+class Banner(models.Model):
+    img=models.CharField(max_length=200)
+    all_text=models.CharField(max_length=300)
+
 
 
 # category
@@ -45,7 +52,6 @@ class Product(models.Model):
     slug=models.CharField(max_length=400)
     detail=models.TextField()
     specs=models.TextField()
-    price=models.PositiveIntegerField()
     category=models.ForeignKey(Category,on_delete=models.CASCADE)
     brand=models.ForeignKey(Brand,on_delete=models.CASCADE)
     color=models.ForeignKey(Color,on_delete=models.CASCADE)
@@ -55,3 +61,15 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+
+# product Attribute
+class ProductAttribute(models.Model):
+    product=models.ForeignKey(Product,on_delete=models.CASCADE)
+    color=models.ForeignKey(Color,on_delete=models.CASCADE)
+    size=models.ForeignKey(Size,on_delete=models.CASCADE)
+    price=models.PositiveBigIntegerField()
+
+    def __str__(self):
+        return self.product.title
+
