@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 <!-- Home Slider -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -13,12 +13,15 @@
   <div class="carousel-inner">
     
     <div class="carousel-item active">
-      
+        <img src="{% static 'media/images/barn.jpg' %}" class="d-block w-100" alt="..." height="300px">
+      </div>
       <div class="carousel-item">
      
-      <img src="/media" class="d-block w-100" alt="...">
+      <img src="{% static 'media/images/barn2.jpg' %}" class="d-block w-100" alt="..." height="300px">
     </div>
-    
+    <div class="carousel-item">
+        <img src="{% static 'media/images/barn4.jpg' %}" class="d-block w-100" alt="..." height="300px">
+      </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,15 +40,15 @@
     
 		<div class="col-md-3 mb-4">
 			<div class="card shadow">
-			  <a href=""><img src="" class="card-img-top" alt=""></a>
+			  <a href=""><img src="{% static 'media/images/t3.jpg' %}" class="card-img-top" alt=""></a>
 			  <div class="card-body">
-			    <h5 class="card-text"><a href=""></a></h5>
-          <h6>$ <span class="product-price"></span></h6>
+			    <h5 class="card-text"><a href="">tshirt</a></h5>
+          <h6>20$ <span class="product-price"></span></h6>
 			  </div>
 			  <div class="card-footer">
          
           <input type="hidden" value="1" class="form-control product-qty-" id="productQty" />
-          <input type="hidden" class="product-image-" value="" />
+          <input type="hidden" class="product-image-" placeholder="" value="" />
           <input type="hidden" class="product-id-" value="" />
           <input type="hidden" class="product-title" value="" />
 			  	<button class="btn btn-sm btn-primary add-to-cart" data-index=""><i class="fa fa-shopping-cart"></i></button>
