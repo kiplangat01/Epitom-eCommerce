@@ -1,7 +1,6 @@
 from distutils.command.upload import upload
 from email.mime import image
-from tkinter import CASCADE
-from turtle import color, title
+from tabnanny import verbose
 from unicodedata import category
 from django.db import models
 
@@ -9,14 +8,19 @@ from django.db import models
 class Banner(models.Model):
     img=models.CharField(max_length=200)
     all_text=models.CharField(max_length=300)
+     
 
+    class Meta:
+        verbose_name_plural='1. Banners'
 
 
 # category
 class Category(models.Model):
     title=models.CharField(max_length=100)
     image=models.ImageField(upload_to="cat_imgs/")
-
+     
+    class Meta:
+        verbose_name_plural='Categories'
 
     def __str__(self):
         return self.title
