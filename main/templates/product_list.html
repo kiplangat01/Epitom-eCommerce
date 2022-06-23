@@ -6,68 +6,42 @@
 
     <div class="row">
         <!-- filters -->
+        <div class="col-md-3">
         <h3 class="mb-4 border-bottom pb-1">Filters</h3> <br>
         <!-- f1 -->
         <div class="card mb-4">
             <h6 class="card-header">colors</h6>
             <div class="list-group list-group-flush">
-                <li>
+                {% for color in colors %}
+                <li class="list-group-item">
                     <input type="checkbox">&nbsp;
-                    <button class="btn btn-danger"></button>
+                    <!-- <button class="btn" style="background-color: {{color.color__color_code}};"></buttotn> -->
                 </li>
-                <li>
-                    <input type="checkbox">&nbsp;
-                    <button class="btn btn-dark"></button>
-                </li>
-                <li>
-                    <input type="checkbox">&nbsp;
-                    <button class="btn btn-success"></button>
-                </li>
-                <li>
-                    <input type="checkbox">&nbsp;
-                    <button class="btn btn-warning"></button>
-                </li>
+                {% endfor %}
             </div>
         </div>
-   
-
     <!-- f2 -->
-   
     <div class="card mb-4"> 
         <h6 class="card-header">Categories</h6>
         <div class="list-group list-group-flush">
+            {% for cat in cats %}
             <li class="list-group-item">
-                <input type="checkbox">&nbsp;
-                Category 1
+                <input value="{{cat.category__id}}" type="checkbox">&nbsp;
+                {{cat.category__title}}
             </li>
-            <li class="list-group-item">
-                <input type="checkbox">&nbsp;
-                Category 2
-            </li>
-            <li class="list-group-item">
-                <input type="checkbox">&nbsp;
-                Category 3
-            </li>
+           {% endfor %}
         </div>
     </div>
-   
     <!-- f3 -->
-    
     <div class="card mb-4"> 
         <h6 class="card-header">Brands</h6>
         <div class="list-group list-group-flush">
+            {% for brand in brands %}
             <li class="list-group-item">
-                <input type="checkbox">&nbsp;
-                Brand 1
+                <input value="{{brand.brand__id}}" type="checkbox">&nbsp;
+                {{brand.brand__title}}
             </li>
-            <li class="list-group-item">
-                <input type="checkbox">&nbsp;
-                Brand 2
-            </li>
-            <li class="list-group-item">
-                <input type="checkbox">&nbsp;
-                Brand 3
-            </li>
+           {% endfor %}
         </div>
     </div>
 <br>
@@ -77,26 +51,15 @@
     <div class="card mb-4"> 
         <h6 class="card-header">Sizes</h6>
         <div class="list-group list-group-flush">
+            {% for size in sizes %}
             <li class="list-group-item">
-                <input type="checkbox">&nbsp;
-                Small
+                <input value="{{size.size__id}}" type="checkbox">&nbsp;
+                {{size.size__title}}
             </li>
-            <li class="list-group-item">
-                <input type="checkbox">&nbsp;
-                medium
-            </li>
-            <li class="list-group-item">
-                <input type="checkbox">&nbsp;
-                large
-            </li>
-            <li class="list-group-item">
-                <input type="checkbox">&nbsp;
-                Extra large
-            </li>
+            {% endfor %}
         </div>
     </div>
 </div>
-
  
     <div class="col-md-9 ">
         <!-- products -->
@@ -104,11 +67,12 @@
             products
         </h3>
         <div class="row">
+            {% for product in data %}
             <div class="col-md-4 mb-4">
                 <div class="card shadow">
-                    <a href="#"><img src="" alt="..." class="card-img-top"></a>
+                    <a href="/product/{{product.slug}}/{{product.id}}"><img src="/media/{{product.image}}" alt="{{product.title}}" class="card-img-top" height="250px" ></a>
                     <div class="card-body">
-                        <h6 class="card-text"><a href="#">T-shirt</a></h6>
+                        <h6 class="card-text"><a href="/product/{{product.slug}}/{{product.id}}">{{product.title}}</a></h6>
                     </div>
                     <div class="card-footer">
                         <button class="btn btn-sm btn-primary"><i class="fa fa-shopping-cart"></i></button>
@@ -120,8 +84,9 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        <p class="my-4 text-center"><a href="#" class="btn btn-dark btn-sm">Load More</a>  </p>
+        <p class="my-4 text-center"><a href="#" class="btn btn-dark btn-sm">Load More<i class="fa fa-sync load-more-icon"></i></a>  </p>
     </div> 
 </div> 
 
