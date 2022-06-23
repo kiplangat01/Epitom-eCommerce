@@ -56,10 +56,10 @@
 		        <a class="nav-link text-white" href="/">Home</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link text-white" href="{% url 'category_list' %}">Categories</a>
+		        <a class="nav-link text-white" href="{% url 'category-list' %}">Categories</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link text-white" href="#">Brands</a>
+		        <a class="nav-link text-white" href="{% url 'brand-list' %}">Brands</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link text-white" href="#"><i class="fa fa-shopping-cart"></i> Cart (<span class="cart-list">{{request.session.cartdata|length}}</span>)</a>
