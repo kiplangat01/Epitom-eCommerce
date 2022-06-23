@@ -6,8 +6,8 @@ admin.site.register(Brand)
 admin.site.register(Size)
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display=('id', 'title', 'brand', 'color', 'size', 'status')
-    list_editable=('status',) 
+    list_display=('id', 'title', 'brand', 'color', 'size', 'status', 'is_featured')
+    list_editable=('status', 'is_featured') 
 admin.site.register(Product,ProductAdmin)
 
 class ColorAdmin(admin.ModelAdmin):
