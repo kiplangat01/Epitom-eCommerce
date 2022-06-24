@@ -2,7 +2,7 @@
 
 ##### Kiplangat Meshack
 
-### This is an ecommerce web app where user can login or sign up and have a look at products select those inrested with and add them to cart then finish order and pay for the product using paypal (Rate-Projects).
+### This is an ecommerce web app where user can login or sign up and have a look at products select those inrested with and add them to cart then finish order and pay for the product using paypal (Epitom eCommerce).
 
 ## Table of Content
 
