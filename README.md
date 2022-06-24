@@ -15,7 +15,7 @@
 
 ## Description
  
-<p>This is an ecommerce web app where user can login or sign up and have a look at products select those inrested with and add them to cart and go to checkout anf finish order and pay for them using paypalform of payment user is also able to view his/her orders and enter his/her adress for the products to be delivered to. In this web app also user is able to rate projects acording his/her impression by the product
+<p>This is an ecommerce web app where user can login or sign up and have a look at products select those inrested with and add them to cart and go to checkout anf finish order and pay for them using paypal form of payment user is also able to view his/her orders and enter his/her adress for the products to be delivered to. In this web app also user is able to rate projects acording his/her impression by the product
 </p>
 
 ## Installation
